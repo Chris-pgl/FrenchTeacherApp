@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         redButton = findViewById(R.id.redBtn)
         yellowButton = findViewById(R.id.yellowBtn)
 
-
+        /* Fatto Grezzamente
         blackButton.setOnClickListener {
             MediaPlayer.create(this, R.raw.black).start()
         }
@@ -48,12 +48,37 @@ class MainActivity : AppCompatActivity() {
         yellowButton.setOnClickListener {
             MediaPlayer.create(this, R.raw.yellow).start()
         }
+         */
 
+        //fatto bene
+        val buttons = listOf<Button>(
+                    blackButton,
+                    greenButton,
+                    purpleButton,
+                    redButton,
+                    yellowButton
+        )
 
+        for (button in buttons) {
+            button.setOnClickListener {
+                if (button == blackButton) {
+                    MediaPlayer.create(this, R.raw.black).start()
+                } else if (button == greenButton) {
+                    MediaPlayer.create(this, R.raw.green).start()
+                } else if (button == purpleButton) {
+                    MediaPlayer.create(this, R.raw.purple).start()
+                } else if (button == redButton) {
+                    MediaPlayer.create(this, R.raw.red).start()
+                } else if (button == yellowButton) {
+                    MediaPlayer.create(this, R.raw.yellow).start()
+                }
+            }
+        }
 
 
 
     }
+
 
 
 }
